@@ -53,15 +53,11 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                SecondSection
+                Main
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-             <li class="nav-item">
-                <a class="nav-link disabled" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Appointments</span></a>
-            </li>
+             
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -70,11 +66,7 @@
                     <span>Enquires</span></a>
             </li>
 
-            <li class="nav-item disabled">
-                <a class="nav-link  disabled" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Products</span></a>
-            </li>
+           
             <li class="nav-item">
                 <a class="nav-link" href={% url 'stock' %}>
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -89,17 +81,13 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Billing</span></a>
-            </li>
+            
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">
+                <a class="nav-link " href="{% url 'serviceSlip' %}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Service Slip</span></a>
+                    <span>Billing</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
@@ -108,15 +96,11 @@
              <div class="sidebar-heading">
                 Human Resource
             </div>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Clients</span></a>
-            </li>
+          
              <li class="nav-item">
-                <a class="nav-link disabled" href="#">
+                <a class="nav-link " href="{% url 'employee' %}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Employees</span></a>
+                    <span>Beauticians</span></a>
             </li>
 
             <!-- Divider -->
@@ -148,7 +132,7 @@
 
                     <!-- Topbar Search -->
                     <h1 class="h3 mt-2 text-gray-800">Admin</h1> 
-                    <a class="btn  btn-outline-danger ml-2">Buy To Unlock Other Features</a>
+                   
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -235,13 +219,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
+            
             <!-- End of Footer -->
 
         </div>
