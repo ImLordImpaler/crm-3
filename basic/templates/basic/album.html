@@ -1,0 +1,71 @@
+{% extends 'basic/base.html' %}
+
+{% block content %}
+
+
+
+  <section class="jumbotron text-center commonContainer" style="background-color: #4F73DF;">
+    <div class="container ">
+      <h1 class='jumText'>Stock Section</h1>
+      <p class="lead text-muted jumText">यह एल्बम वाला भाग है</p>
+      <p>
+      
+        <a href="#" class="btn btn-primary my-2 jumText">Add Another Product</a>
+        <a href="#" class="btn btn-secondary my-2 jumText">Secondary action</a>
+      </p>
+    </div>
+  </section>
+  <style>
+  .jumText{
+   color: white;
+   font-color: white;
+  }
+  </style>
+  <div class="album py-5 bg-light commonContainer" >
+    <div class="container" style=>
+
+      <div class="row">
+      {% for i in stock  %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm albumImage">
+              <img src="{{i.img.url}}" alt="..." class="img-thumbnail">
+            <div class="card-body">
+            <h3>{{i.name}}</h3>
+                <p class="card-text">Sell Price:<strong> Rs. {{i.sprice}} /-</strong></p>
+                
+                <p class="card-text">Buy Price: <strong>Rs. {{i.bprice}} /-</strong></p>
+                <p class="card-text">Quantity <strong>{{i.quantity}} units</strong></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a type="button" class="btn btn-sm btn-outline-primary" href='{% url 'productEnquiry' i.id %}'>Edit</a>
+                    <a type="button" class="btn btn-sm btn-outline-danger">Delete</a>
+                  </div>
+                  <small class="text-muted">{{i.date}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+
+
+<style>
+.albumImage{
+    max-height: 600px;
+    max-width: 280px;
+   
+}
+</style>
+{% endblock content %}
+

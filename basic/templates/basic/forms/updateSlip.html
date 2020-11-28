@@ -1,0 +1,31 @@
+{% extends 'basic/base.html' %}
+
+
+{% block content %}
+     <form method='post'  class="form-inline"  action=''> {% csrf_token %}
+            <div class='container px-2 m-5'>
+            {{form.name.label}}
+            {{form.name}}
+            {{form.phone.label}}
+            {{form.phone}}
+            {{form.client.label}}
+            {{form.client}}
+           
+           
+            
+            
+            </div>
+            <div class='container px-4 m-5'>
+            
+            {{form.product.label}}
+            {{form.product}}
+             {{form.service.label}} 
+            {{form.service}}
+            {{form.emp.label}}
+            {{form.emp}}
+
+            
+            </div>
+            <button type="submit" value="Submit" class='btn btn-primary'>Submit</button>
+        </form>
+    {% endblock content %}

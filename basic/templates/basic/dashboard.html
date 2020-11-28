@@ -1,0 +1,95 @@
+{% extends 'basic/base.html' %}
+
+
+{% block content %}
+
+   
+      
+      
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+        <div class='container'>
+      
+        <h3> Idhar ayega calender </h3>
+      </div>
+
+
+
+      
+        <div class='row mt-5'>
+          <div class='col-sm-6'>
+                <table class="table table-danger enquiryTable">
+                  <h4>Enquires</h4>
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+            {% for i in enq %}
+                    <tr>
+                      <th scope="row">{{i.id}}</th>
+                      <td>{{i.name}}</td>
+                      <td>{{i.phone}}</td>
+                      <td>{{i.service}}</td>
+                      <td>{{i.date}}</td>
+
+                    </tr>
+            {% endfor %}
+                    
+                  </tbody>
+                  
+                </table>
+                
+                  <a href = "{% url 'enquiry' %}" class='btn btn-sm btn-primary'>View More?</a>
+                
+                
+          </div>
+          <div class='col-sm-6'>
+                <table class="table table-danger enquiryTable">
+                  <h4>Products (low in stock)</h4>
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Category</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                  {% for i in pro %}
+                    <tr>
+                      <th scope="row">{{i.id}}</th>
+                      <td>{{i.name}}</td>
+                      <td>{{i.quantity}}</td>
+                      <td>{{i.bprice}}</td>
+                      <td>{{i.category}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                <a href = "{% url 'product' %}" class='btn btn-sm btn-primary'>View More?</a>
+          </div>
+        </div>
+    
+  
+     
+{% endblock content %}

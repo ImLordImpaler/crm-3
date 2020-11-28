@@ -1,0 +1,74 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Salon</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'cover.css' %}" rel="stylesheet">
+  </head>
+  <body class="text-center bodyClass">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link  cove" href="#">Dashboard</a>
+        <a class="nav-link cove" href="#">AboutUs</a>
+        <a class="nav-link cove" href="#">Our Pricing</a>
+      </nav>
+     
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading cove">Salon Solutions</h1>
+    <p class="lead cove">Buissness Solutions For You And Your Salon</p>
+    <p class="lead">
+      <a href="{% url 'dashboard' %}" class="btn btn-lg btn-secondary ">Dashboard</a>
+    </p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p  class='cove'>Designed By <a href="https://getbootstrap.com/" class='cove'>RS</a>, by <a href="https://twitter.com/mdo" class='cove'>noniBoss</a>.</p>
+    </div>
+  </footer>
+</div>
+</body>
+<style>
+.bodyClass{
+   background-image : url(https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg)
+}
+.cove{
+  color: white;
+  
+}
+</style>
+</html>

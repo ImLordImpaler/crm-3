@@ -1,0 +1,78 @@
+{% extends 'basic/base.html' %}
+
+{% block content %}
+
+
+
+    <div class='container commonContainer py-3'>
+        <h4><i>Add A New Product: </i></h4>
+        <form method='post'  class="form-inline "  action=''> {% csrf_token %}
+            <div class='container px-2 m-5'>
+      {{form.name.label}}
+            {{form.name}}&nbsp;&nbsp;
+            {{form.bprice.label}} 
+            {{form.bprice}}&nbsp;&nbsp;
+            
+            {{form.sprice.label}}
+            {{form.sprice}}&nbsp;&nbsp;
+            </div>
+            <div class='container px-4 m-5'>
+            {{form.category.label}}
+            {{form.category}}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            {{form.img.label}}
+            {{form.img}}&nbsp;&nbsp;
+
+            {{form.quantity.label}}
+            {{form.quantity}}
+            </div>
+            <button type="submit" value="Submit" class='btn btn-primary'>Submit</button>
+        </form>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class='container'>
+        <h3> All Products </h3>
+        <table class="table table-danger enquiryTable">
+                  
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">bPrice</th>
+                      <th scope="col">sPrice</th>
+                      <th scope="col">Category</th>
+                      <th scope='col'>Quantity</th>
+                      <th scope='col'>Action </th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                  {% for i in pro %}
+                    <tr>
+                      <th scope="row">{{i.id}}</th>
+                      <td>{{i.name}}</td>
+                      <td>{{i.bprice}}</td>
+                      <td>{{i.sprice}}</td>
+                      <td>{{i.category}}</td>
+                      <td>{{i.quantity}}</td>
+                      <td>
+                        <a class='btn btn-sm btn-primary' href="{% url 'productEnquiry' i.id %}">Update </a>
+                        <a class='btn btn-sm btn-danger' href="{% url 'productDelete' i.id %}">Delete </a>
+                       </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+      <style>
+      .enquiryTable{
+        border: none;
+        border-radius: 50px 20px;
+      }
+      </style>
+    </div>
+
+{% endblock content %}

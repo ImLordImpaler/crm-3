@@ -1,0 +1,66 @@
+{% extends 'basic/base.html' %}
+
+{% block content %}
+
+    <div class='container commonContainer py-3'>
+    <h4>Add New Client:</h4>
+      <form method='post'  class="form-inline"  action=''> {% csrf_token %}
+            <div class='container px-2 m-5'>
+            {{form.name.label}}
+            {{form.name}}
+            {{form.phone.label}} 
+            {{form.phone}}
+            
+            {{form.email.label}}
+            {{form.email}}
+            </div>
+            <div class='container px-4 m-5'>
+            {{form.address.label}}
+            {{form.address}}
+
+            </div>
+            <button type="submit" value="Submit" class='btn btn-primary'>Submit</button>
+        </form>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class='container'>
+        <h3> All Clients </h3>
+        <table class="table table-dark enquiryTable">
+                  
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Email</th>
+                      
+                      <th scope='col'>Address</th>
+                      <th scope='col'>Action </th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                  {% for i in pro %}
+                    <tr>
+                      <th scope="row">{{i.id}}</th>
+                      <td>{{i.name}}</td>
+                      <td>{{i.phone}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.address}}</td>
+                      
+                      <td>
+                        <a class='btn btn-sm btn-primary' href="{% url 'clientUpdate' i.id %}">Update </a>
+                        <a class='btn btn-sm btn-danger' href="{% url 'clientDelete' i.id %}">Delete </a>
+                       </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+    </div>
+
+
+{% endblock content %}
