@@ -10,6 +10,8 @@ urlpatterns = [
     path('clients' , views.clients , name='clients'),
     path('serviceSlip' , views.serviceSlip , name='serviceSlip'),
     path('billing' , views.billing , name='billing'),
+    path('followup' , views.followup , name='followup'),
+   
     
     # update
     path('enquiry/<str:pk>/', views.enquiryUpdate , name = 'enquiryUpdate'),

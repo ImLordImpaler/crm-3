@@ -7,7 +7,24 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 # Create your views here.
 from django.contrib.auth.decorators import login_required
+import datetime
 
+
+
+def followup(request):
+    obj = Product.objects.all()
+    cli = Client.objects.all()
+    
+    l1 = []
+    for i in obj:
+        if i.quantity <5:
+            l1.append(i)
+    
+   
+    params = {
+        'pro' : l1,
+        'cli': cli    }
+    return render(request , 'basic/followup/followupBase.html' , params)
 @login_required(login_url='loginPage')
 def cover(request):
     return render(request , 'basic/cover.html')

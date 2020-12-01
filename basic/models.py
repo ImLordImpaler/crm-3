@@ -10,6 +10,7 @@ class Customer(models.Model):
     age = models.IntegerField(default=10)
     phone = models.CharField(max_length=10 , blank=True , null=True)
     root = models.OneToOneField(User , on_delete=models.CASCADE)
+    dob = models.DateField(null=True , blank=True)
     def __str__(self):
         return self.root.username
 @receiver(post_save , sender=User)
@@ -85,15 +86,19 @@ class Employee(models.Model):
     def __str__(self):
         return self.name 
 
-
+from datetime import date
 class Client(models.Model):
     name = models.CharField(max_length= 100 , null=True , blank=True)
     email = models.EmailField(max_length=100 , null=True , blank=True)
     phone = models.CharField(max_length=10 , null=True , blank=True)
     address = models.CharField(max_length=500 , null=True , blank=True)
+    dob = models.DateField(null=True , blank=True)
 
     def __str__(self):
         return self.name
+    @property
+    def is_birthday(self):
+        return date.today() == self.dob
 
 class Slip(models.Model):
     name= models.CharField(max_length=100 , null=True , blank=True)
